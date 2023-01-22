@@ -17,7 +17,7 @@ https://github.com/amliwada/casm/blob/5b5e3ecec0d5c590798a5cdfe54430cf1ecba140/t
 
 ### Single instructions
 
-https://github.com/amliwada/casm/blob/b67b6f4d4abaa58c66b493d945906db45f7580bb/tests/main.cpp#L10115-L10119
+https://github.com/amliwada/casm/blob/06fd7b7d5d533f7529a7de5b3104395559f48a94/tests/main.cpp#L10115-L10119
 
 ### More Examples
 
