@@ -10096,7 +10096,7 @@ TEST(FunctionlTest, x64_f)
 		"loop"_l,
 
 		inc(rax),
-		sub(byte_ptr [rcx], 1),
+		sub(byte_ptr [rcx], 7),
 
 		cmp(byte_ptr [rcx], 0),
 		jnz("loop"_l),
