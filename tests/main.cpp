@@ -10112,7 +10112,7 @@ TEST(FunctionlTest, x64_f)
 
 TEST(SingleInstruction, inc_instruction)
 {
-	constexpr auto result = inc(byte_ptr [rdx + rax * 8]).bytecode();
+	constexpr auto result{ inc(byte_ptr [rdx + rax * 8]).bytecode() };
 
 	constexpr auto expected{ details::make_static_bytecode(0xfe, 0x04, 0xc2) };
 
