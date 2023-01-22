@@ -13,7 +13,44 @@ Compile-time x86/x86-64 bytecode generator. You can use it like a inline assembl
 
 ### Inline assembler
 
-https://github.com/amliwada/casm/blob/5b5e3ecec0d5c590798a5cdfe54430cf1ecba140/tests/main.cpp#L10086-L10110
+```C++
+#include "casm.hpp"
+
+#include <cassert>
+
+int main()
+{
+  using namespace casm;
+
+  int i = 0x14;
+
+  f my_f
+  {	
+    push(rcx),
+    mov(rcx, &i),
+
+    push(rax),
+    xor_(rax, rax),
+
+    "loop"_l,
+
+    inc(rax),
+    sub(byte_ptr [rcx], 7),
+
+    cmp(byte_ptr [rcx], 0),
+    jnz("loop"_l),
+
+    pop(rax),
+    pop(rcx)
+  };
+
+  my_f();
+
+  assert(i == 0);
+
+  return 0;
+}
+```
 
 ### Single instructions
 
