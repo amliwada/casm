@@ -13,7 +13,7 @@ Compile-time x86/x86-64 bytecode generator. You can use it like a inline assembl
 
 ### Inline assembler
 
-https://github.com/amliwada/casm/blob/b67b6f4d4abaa58c66b493d945906db45f7580bb/tests/main.cpp#L10086-L10110
+https://github.com/amliwada/casm/blob/5b5e3ecec0d5c590798a5cdfe54430cf1ecba140/tests/main.cpp#L10086-L10110
 
 ### Single instructions
 
