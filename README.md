@@ -11,6 +11,31 @@ Compile-time x86/x86-64 bytecode generator. You can use it like a inline assembl
 
 ## Examples
 
+### Assembler
+
+```C++
+#include "casm.hpp"
+
+int main()
+{
+  using namespace casm;
+
+  int i = 0x14;
+
+  assembler code
+  {	
+    push(rdx),
+    mov(rdx, &i),
+    add(dword [rdx], 0x21042005),
+    pop(rdx)
+  };
+
+  auto bytecode = code.bytecode();
+
+  return 0;
+}
+```
+
 ### Inline assembler
 
 ```C++
