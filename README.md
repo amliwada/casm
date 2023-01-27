@@ -11,13 +11,75 @@ Compile-time x86/x86-64 bytecode generator. You can use it like a inline assembl
 
 ## Examples
 
+### Assembler
+
+```C++
+#include "casm.hpp"
+
+int main()
+{
+  using namespace casm;
+
+  int i = 0x14;
+
+  assembler code
+  {	
+    push(rdx),
+    mov(rdx, &i),
+    add(dword [rdx], 0x21042005),
+    pop(rdx)
+  };
+
+  auto bytecode = code.bytecode();
+
+  return 0;
+}
+```
+
 ### Inline assembler
 
-https://github.com/amliwada/casm/blob/5b5e3ecec0d5c590798a5cdfe54430cf1ecba140/tests/main.cpp#L10086-L10110
+```C++
+#include "casm.hpp"
+
+#include <cassert>
+
+int main()
+{
+  using namespace casm;
+
+  int i = 0x14;
+
+  f my_f
+  {	
+    push(rcx),
+    mov(rcx, &i),
+
+    push(rax),
+    xor_(rax, rax),
+
+    "loop"_l,
+
+    inc(rax),
+    sub(byte_ptr [rcx], 7),
+
+    cmp(byte_ptr [rcx], 0),
+    jnz("loop"_l),
+
+    pop(rax),
+    pop(rcx)
+  };
+
+  my_f();
+
+  assert(i == 0);
+
+  return 0;
+}
+```
 
 ### Single instructions
 
-https://github.com/amliwada/casm/blob/b67b6f4d4abaa58c66b493d945906db45f7580bb/tests/main.cpp#L10115-L10119
+https://github.com/amliwada/casm/blob/06fd7b7d5d533f7529a7de5b3104395559f48a94/tests/main.cpp#L10115-L10119
 
 ### More Examples
 
