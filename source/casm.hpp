@@ -4690,6 +4690,7 @@ namespace casm
         bytecode_t bytecode_;
     };
 
+#ifndef __APPLE__
     class f
     {
     public:
@@ -4739,6 +4740,7 @@ namespace casm
         void* pointer_;
         std::size_t size_;
     };
+#endif
 }
 
 #endif
