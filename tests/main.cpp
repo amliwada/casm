@@ -92,7 +92,7 @@ extern "C" void nasm_add_al_imm8_instruction();
 
 TEST(NASMBytecode, add_al_imm8_instruction_test)
 {
-	const auto casm_bytecode{ add(al, 0x40).bytecode() };
+	const auto casm_bytecode{ add(al, 0x40) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_add_al_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -200,7 +200,7 @@ extern "C" void nasm_or_al_imm8_instruction();
 
 TEST(NASMBytecode, or_al_imm8_instruction_test)
 {
-	const auto casm_bytecode{ or_(al, 0x40).bytecode() };
+	const auto casm_bytecode{ or_(al, 0x40) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_or_al_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -308,7 +308,7 @@ extern "C" void nasm_adc_al_imm8_instruction();
 
 TEST(NASMBytecode, adc_al_imm8_instruction_test)
 {
-	const auto casm_bytecode{ adc(al, 0x40).bytecode() };
+	const auto casm_bytecode{ adc(al, 0x40) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_adc_al_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -416,7 +416,7 @@ extern "C" void nasm_sbb_al_imm8_instruction();
 
 TEST(NASMBytecode, sbb_al_imm8_instruction_test)
 {
-	const auto casm_bytecode{ sbb(al, 0x40).bytecode() };
+	const auto casm_bytecode{ sbb(al, 0x40) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_sbb_al_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -524,7 +524,7 @@ extern "C" void nasm_and_al_imm8_instruction();
 
 TEST(NASMBytecode, and_al_imm8_instruction_test)
 {
-	const auto casm_bytecode{ and_(al, 0x40).bytecode() };
+	const auto casm_bytecode{ and_(al, 0x40) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_and_al_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -632,7 +632,7 @@ extern "C" void nasm_sub_al_imm8_instruction();
 
 TEST(NASMBytecode, sub_al_imm8_instruction_test)
 {
-	const auto casm_bytecode{ sub(al, 0x40).bytecode() };
+	const auto casm_bytecode{ sub(al, 0x40) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_sub_al_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -740,7 +740,7 @@ extern "C" void nasm_xor_al_imm8_instruction();
 
 TEST(NASMBytecode, xor_al_imm8_instruction_test)
 {
-	const auto casm_bytecode{ xor_(al, 0x40).bytecode() };
+	const auto casm_bytecode{ xor_(al, 0x40) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_xor_al_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -848,7 +848,7 @@ extern "C" void nasm_cmp_al_imm8_instruction();
 
 TEST(NASMBytecode, cmp_al_imm8_instruction_test)
 {
-	const auto casm_bytecode{ cmp(al, 0x40).bytecode() };
+	const auto casm_bytecode{ cmp(al, 0x40) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cmp_al_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -938,7 +938,7 @@ extern "C" void nasm_movsxd_r32_64_rm32_instruction();
 
 TEST(NASMBytecode, movsxd_r32_64_rm32_instruction_test)
 {
-	const auto casm_bytecode{ movsxd(rdx, ecx).bytecode() };
+	const auto casm_bytecode{ movsxd(rdx, ecx) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movsxd_r32_64_rm32_instruction), casm_bytecode.size()) == 0);
 };
@@ -947,7 +947,7 @@ extern "C" void nasm_push_imm32_instruction();
 
 TEST(NASMBytecode, push_imm32_instruction_test)
 {
-	const auto casm_bytecode{ push(0x11113333_d).bytecode() };
+	const auto casm_bytecode{ push(0x11113333_d) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_push_imm32_instruction), casm_bytecode.size()) == 0);
 };
@@ -973,7 +973,7 @@ extern "C" void nasm_push_imm8_instruction();
 
 TEST(NASMBytecode, push_imm8_instruction_test)
 {
-	const auto casm_bytecode{ push(0x11_b).bytecode() };
+	const auto casm_bytecode{ push(0x11_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_push_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -999,7 +999,7 @@ extern "C" void nasm_ins_no_operands_instruction();
 
 TEST(NASMBytecode, ins_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ ins().bytecode() };
+	const auto casm_bytecode{ ins() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_ins_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1008,7 +1008,7 @@ extern "C" void nasm_insb_no_operands_instruction();
 
 TEST(NASMBytecode, insb_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ insb().bytecode() };
+	const auto casm_bytecode{ insb() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_insb_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1017,7 +1017,7 @@ extern "C" void nasm_insw_no_operands_instruction();
 
 TEST(NASMBytecode, insw_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ insw().bytecode() };
+	const auto casm_bytecode{ insw() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_insw_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1026,7 +1026,7 @@ extern "C" void nasm_insd_no_operands_instruction();
 
 TEST(NASMBytecode, insd_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ insd().bytecode() };
+	const auto casm_bytecode{ insd() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_insd_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1035,7 +1035,7 @@ extern "C" void nasm_outsb_no_operands_instruction();
 
 TEST(NASMBytecode, outsb_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ outsb().bytecode() };
+	const auto casm_bytecode{ outsb() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_outsb_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1044,7 +1044,7 @@ extern "C" void nasm_outsw_no_operands_instruction();
 
 TEST(NASMBytecode, outsw_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ outsw().bytecode() };
+	const auto casm_bytecode{ outsw() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_outsw_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1053,7 +1053,7 @@ extern "C" void nasm_outsd_no_operands_instruction();
 
 TEST(NASMBytecode, outsd_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ outsd().bytecode() };
+	const auto casm_bytecode{ outsd() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_outsd_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1749,7 +1749,7 @@ extern "C" void nasm_nop_no_operands_instruction();
 
 TEST(NASMBytecode, nop_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ nop().bytecode() };
+	const auto casm_bytecode{ nop() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_nop_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1758,7 +1758,7 @@ extern "C" void nasm_pause_no_operands_instruction();
 
 TEST(NASMBytecode, pause_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ pause_().bytecode() };
+	const auto casm_bytecode{ pause_() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pause_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1767,7 +1767,7 @@ extern "C" void nasm_cbw_no_operands_instruction();
 
 TEST(NASMBytecode, cbw_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cbw().bytecode() };
+	const auto casm_bytecode{ cbw() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cbw_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1776,7 +1776,7 @@ extern "C" void nasm_cwde_no_operands_instruction();
 
 TEST(NASMBytecode, cwde_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cwde().bytecode() };
+	const auto casm_bytecode{ cwde() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cwde_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1785,7 +1785,7 @@ extern "C" void nasm_cdqe_no_operands_instruction();
 
 TEST(NASMBytecode, cdqe_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cdqe().bytecode() };
+	const auto casm_bytecode{ cdqe() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cdqe_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1794,7 +1794,7 @@ extern "C" void nasm_cwd_no_operands_instruction();
 
 TEST(NASMBytecode, cwd_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cwd().bytecode() };
+	const auto casm_bytecode{ cwd() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cwd_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1803,7 +1803,7 @@ extern "C" void nasm_cdq_no_operands_instruction();
 
 TEST(NASMBytecode, cdq_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cdq().bytecode() };
+	const auto casm_bytecode{ cdq() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cdq_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1812,7 +1812,7 @@ extern "C" void nasm_cqo_no_operands_instruction();
 
 TEST(NASMBytecode, cqo_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cqo().bytecode() };
+	const auto casm_bytecode{ cqo() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cqo_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1821,7 +1821,7 @@ extern "C" void nasm_fwait_no_operands_instruction();
 
 TEST(NASMBytecode, fwait_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fwait().bytecode() };
+	const auto casm_bytecode{ fwait() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fwait_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1830,7 +1830,7 @@ extern "C" void nasm_wait_no_operands_instruction();
 
 TEST(NASMBytecode, wait_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ wait().bytecode() };
+	const auto casm_bytecode{ wait() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_wait_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1839,7 +1839,7 @@ extern "C" void nasm_pushf_no_operands_instruction();
 
 TEST(NASMBytecode, pushf_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ pushf().bytecode() };
+	const auto casm_bytecode{ pushf() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pushf_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1848,7 +1848,7 @@ extern "C" void nasm_pushfq_no_operands_instruction();
 
 TEST(NASMBytecode, pushfq_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ pushfq().bytecode() };
+	const auto casm_bytecode{ pushfq() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pushfq_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1857,7 +1857,7 @@ extern "C" void nasm_popf_no_operands_instruction();
 
 TEST(NASMBytecode, popf_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ popf().bytecode() };
+	const auto casm_bytecode{ popf() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_popf_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1866,7 +1866,7 @@ extern "C" void nasm_popfq_no_operands_instruction();
 
 TEST(NASMBytecode, popfq_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ popfq().bytecode() };
+	const auto casm_bytecode{ popfq() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_popfq_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1875,7 +1875,7 @@ extern "C" void nasm_sahf_no_operands_instruction();
 
 TEST(NASMBytecode, sahf_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ sahf().bytecode() };
+	const auto casm_bytecode{ sahf() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_sahf_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1884,7 +1884,7 @@ extern "C" void nasm_lahf_no_operands_instruction();
 
 TEST(NASMBytecode, lahf_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ lahf().bytecode() };
+	const auto casm_bytecode{ lahf() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_lahf_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1893,7 +1893,7 @@ extern "C" void nasm_movsb_no_operands_instruction();
 
 TEST(NASMBytecode, movsb_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ movsb().bytecode() };
+	const auto casm_bytecode{ movsb() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movsb_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1902,7 +1902,7 @@ extern "C" void nasm_movsw_no_operands_instruction();
 
 TEST(NASMBytecode, movsw_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ movsw().bytecode() };
+	const auto casm_bytecode{ movsw() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movsw_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1911,7 +1911,7 @@ extern "C" void nasm_movsd_no_operands_instruction();
 
 TEST(NASMBytecode, movsd_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ movsd().bytecode() };
+	const auto casm_bytecode{ movsd() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movsd_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1920,7 +1920,7 @@ extern "C" void nasm_movsq_no_operands_instruction();
 
 TEST(NASMBytecode, movsq_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ movsq().bytecode() };
+	const auto casm_bytecode{ movsq() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movsq_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1929,7 +1929,7 @@ extern "C" void nasm_cmpsb_no_operands_instruction();
 
 TEST(NASMBytecode, cmpsb_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cmpsb().bytecode() };
+	const auto casm_bytecode{ cmpsb() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cmpsb_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1938,7 +1938,7 @@ extern "C" void nasm_cmpsw_no_operands_instruction();
 
 TEST(NASMBytecode, cmpsw_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cmpsw().bytecode() };
+	const auto casm_bytecode{ cmpsw() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cmpsw_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1947,7 +1947,7 @@ extern "C" void nasm_cmpsd_no_operands_instruction();
 
 TEST(NASMBytecode, cmpsd_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cmpsd().bytecode() };
+	const auto casm_bytecode{ cmpsd() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cmpsd_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1956,7 +1956,7 @@ extern "C" void nasm_cmpsq_no_operands_instruction();
 
 TEST(NASMBytecode, cmpsq_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cmpsq().bytecode() };
+	const auto casm_bytecode{ cmpsq() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cmpsq_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -1965,7 +1965,7 @@ extern "C" void nasm_test_al_imm8_instruction();
 
 TEST(NASMBytecode, test_al_imm8_instruction_test)
 {
-	const auto casm_bytecode{ test(al, 0x40).bytecode() };
+	const auto casm_bytecode{ test(al, 0x40) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_test_al_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -1991,7 +1991,7 @@ extern "C" void nasm_stosb_no_operands_instruction();
 
 TEST(NASMBytecode, stosb_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ stosb().bytecode() };
+	const auto casm_bytecode{ stosb() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_stosb_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2000,7 +2000,7 @@ extern "C" void nasm_stosw_no_operands_instruction();
 
 TEST(NASMBytecode, stosw_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ stosw().bytecode() };
+	const auto casm_bytecode{ stosw() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_stosw_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2009,7 +2009,7 @@ extern "C" void nasm_stosd_no_operands_instruction();
 
 TEST(NASMBytecode, stosd_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ stosd().bytecode() };
+	const auto casm_bytecode{ stosd() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_stosd_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2018,7 +2018,7 @@ extern "C" void nasm_stosq_no_operands_instruction();
 
 TEST(NASMBytecode, stosq_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ stosq().bytecode() };
+	const auto casm_bytecode{ stosq() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_stosq_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2027,7 +2027,7 @@ extern "C" void nasm_lodsb_no_operands_instruction();
 
 TEST(NASMBytecode, lodsb_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ lodsb().bytecode() };
+	const auto casm_bytecode{ lodsb() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_lodsb_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2036,7 +2036,7 @@ extern "C" void nasm_lodsw_no_operands_instruction();
 
 TEST(NASMBytecode, lodsw_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ lodsw().bytecode() };
+	const auto casm_bytecode{ lodsw() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_lodsw_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2045,7 +2045,7 @@ extern "C" void nasm_lodsd_no_operands_instruction();
 
 TEST(NASMBytecode, lodsd_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ lodsd().bytecode() };
+	const auto casm_bytecode{ lodsd() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_lodsd_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2054,7 +2054,7 @@ extern "C" void nasm_lodsq_no_operands_instruction();
 
 TEST(NASMBytecode, lodsq_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ lodsq().bytecode() };
+	const auto casm_bytecode{ lodsq() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_lodsq_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2063,7 +2063,7 @@ extern "C" void nasm_scasb_no_operands_instruction();
 
 TEST(NASMBytecode, scasb_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ scasb().bytecode() };
+	const auto casm_bytecode{ scasb() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_scasb_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2072,7 +2072,7 @@ extern "C" void nasm_scasw_no_operands_instruction();
 
 TEST(NASMBytecode, scasw_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ scasw().bytecode() };
+	const auto casm_bytecode{ scasw() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_scasw_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2081,7 +2081,7 @@ extern "C" void nasm_scasd_no_operands_instruction();
 
 TEST(NASMBytecode, scasd_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ scasd().bytecode() };
+	const auto casm_bytecode{ scasd() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_scasd_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2090,7 +2090,7 @@ extern "C" void nasm_scasq_no_operands_instruction();
 
 TEST(NASMBytecode, scasq_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ scasq().bytecode() };
+	const auto casm_bytecode{ scasq() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_scasq_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2418,7 +2418,7 @@ extern "C" void nasm_retn_imm16_instruction();
 
 TEST(NASMBytecode, retn_imm16_instruction_test)
 {
-	const auto casm_bytecode{ retn(0x1111_w).bytecode() };
+	const auto casm_bytecode{ retn(0x1111_w) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_retn_imm16_instruction), casm_bytecode.size()) == 0);
 };
@@ -2427,7 +2427,7 @@ extern "C" void nasm_ret_no_operands_instruction();
 
 TEST(NASMBytecode, ret_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ ret().bytecode() };
+	const auto casm_bytecode{ ret() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_ret_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2436,7 +2436,7 @@ extern "C" void nasm_mov_m8_imm8_instruction_by_number();
 
 TEST(NASMBytecode, mov_m8_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ mov(byte_ptr [r11 + rax], 0x11_b).bytecode() };
+	const auto casm_bytecode{ mov(byte_ptr [r11 + rax], 0x11_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_mov_m8_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2464,7 +2464,7 @@ extern "C" void nasm_leave_no_operands_instruction();
 
 TEST(NASMBytecode, leave_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ leave().bytecode() };
+	const auto casm_bytecode{ leave() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_leave_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2473,7 +2473,7 @@ extern "C" void nasm_retf_imm16_instruction();
 
 TEST(NASMBytecode, retf_imm16_instruction_test)
 {
-	const auto casm_bytecode{ retf(0x1111_w).bytecode() };
+	const auto casm_bytecode{ retf(0x1111_w) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_retf_imm16_instruction), casm_bytecode.size()) == 0);
 };
@@ -2482,7 +2482,7 @@ extern "C" void nasm_retf_no_operands_instruction();
 
 TEST(NASMBytecode, retf_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ retf().bytecode() };
+	const auto casm_bytecode{ retf() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_retf_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2491,7 +2491,7 @@ extern "C" void nasm_int3_no_operands_instruction();
 
 TEST(NASMBytecode, int3_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ int3().bytecode() };
+	const auto casm_bytecode{ int3() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_int3_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2500,7 +2500,7 @@ extern "C" void nasm_int_imm8_instruction();
 
 TEST(NASMBytecode, int_imm8_instruction_test)
 {
-	const auto casm_bytecode{ int_(0x11_b).bytecode() };
+	const auto casm_bytecode{ int_(0x11_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_int_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -2509,7 +2509,7 @@ extern "C" void nasm_iret_no_operands_instruction();
 
 TEST(NASMBytecode, iret_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ iret().bytecode() };
+	const auto casm_bytecode{ iret() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_iret_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2518,7 +2518,7 @@ extern "C" void nasm_iretd_no_operands_instruction();
 
 TEST(NASMBytecode, iretd_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ iretd().bytecode() };
+	const auto casm_bytecode{ iretd() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_iretd_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2527,7 +2527,7 @@ extern "C" void nasm_iretq_no_operands_instruction();
 
 TEST(NASMBytecode, iretq_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ iretq().bytecode() };
+	const auto casm_bytecode{ iretq() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_iretq_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2808,7 +2808,7 @@ extern "C" void nasm_xlat_no_operands_instruction();
 
 TEST(NASMBytecode, xlat_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ xlat().bytecode() };
+	const auto casm_bytecode{ xlat() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_xlat_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2817,7 +2817,7 @@ extern "C" void nasm_xlatb_no_operands_instruction();
 
 TEST(NASMBytecode, xlatb_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ xlatb().bytecode() };
+	const auto casm_bytecode{ xlatb() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_xlatb_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2826,7 +2826,7 @@ extern "C" void nasm_fadd_m32_instruction_by_number();
 
 TEST(NASMBytecode, fadd_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fadd(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fadd(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fadd_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2835,7 +2835,7 @@ extern "C" void nasm_fadd_sti_instruction_by_number();
 
 TEST(NASMBytecode, fadd_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fadd(st6).bytecode() };
+	const auto casm_bytecode{ fadd(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fadd_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2844,7 +2844,7 @@ extern "C" void nasm_fadd_st_sti_instruction_by_number();
 
 TEST(NASMBytecode, fadd_st_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fadd(st0, st6).bytecode() };
+	const auto casm_bytecode{ fadd(st0, st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fadd_st_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2853,7 +2853,7 @@ extern "C" void nasm_fmul_m32_instruction_by_number();
 
 TEST(NASMBytecode, fmul_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fmul(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fmul(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fmul_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2862,7 +2862,7 @@ extern "C" void nasm_fmul_sti_instruction_by_number();
 
 TEST(NASMBytecode, fmul_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fmul(st6).bytecode() };
+	const auto casm_bytecode{ fmul(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fmul_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2871,7 +2871,7 @@ extern "C" void nasm_fmul_st_sti_instruction_by_number();
 
 TEST(NASMBytecode, fmul_st_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fmul(st0, st6).bytecode() };
+	const auto casm_bytecode{ fmul(st0, st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fmul_st_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2896,7 +2896,7 @@ extern "C" void nasm_fcom_no_operands_instruction();
 
 TEST(NASMBytecode, fcom_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fcom().bytecode() };
+	const auto casm_bytecode{ fcom() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcom_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2921,7 +2921,7 @@ extern "C" void nasm_fcomp_no_operands_instruction();
 
 TEST(NASMBytecode, fcomp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fcomp().bytecode() };
+	const auto casm_bytecode{ fcomp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcomp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -2930,7 +2930,7 @@ extern "C" void nasm_fsub_m32_instruction_by_number();
 
 TEST(NASMBytecode, fsub_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fsub(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fsub(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsub_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2939,7 +2939,7 @@ extern "C" void nasm_fsub_sti_instruction_by_number();
 
 TEST(NASMBytecode, fsub_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fsub(st6).bytecode() };
+	const auto casm_bytecode{ fsub(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsub_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2948,7 +2948,7 @@ extern "C" void nasm_fsub_st_sti_instruction_by_number();
 
 TEST(NASMBytecode, fsub_st_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fsub(st0, st6).bytecode() };
+	const auto casm_bytecode{ fsub(st0, st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsub_st_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2957,7 +2957,7 @@ extern "C" void nasm_fsubr_m32_instruction_by_number();
 
 TEST(NASMBytecode, fsubr_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fsubr(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fsubr(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsubr_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2966,7 +2966,7 @@ extern "C" void nasm_fsubr_sti_instruction_by_number();
 
 TEST(NASMBytecode, fsubr_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fsubr(st6).bytecode() };
+	const auto casm_bytecode{ fsubr(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsubr_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2975,7 +2975,7 @@ extern "C" void nasm_fsubr_st_sti_instruction_by_number();
 
 TEST(NASMBytecode, fsubr_st_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fsubr(st0, st6).bytecode() };
+	const auto casm_bytecode{ fsubr(st0, st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsubr_st_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2984,7 +2984,7 @@ extern "C" void nasm_fdiv_m32_instruction_by_number();
 
 TEST(NASMBytecode, fdiv_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fdiv(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fdiv(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdiv_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -2993,7 +2993,7 @@ extern "C" void nasm_fdiv_sti_instruction_by_number();
 
 TEST(NASMBytecode, fdiv_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fdiv(st6).bytecode() };
+	const auto casm_bytecode{ fdiv(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdiv_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3002,7 +3002,7 @@ extern "C" void nasm_fdiv_st_sti_instruction_by_number();
 
 TEST(NASMBytecode, fdiv_st_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fdiv(st0, st6).bytecode() };
+	const auto casm_bytecode{ fdiv(st0, st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdiv_st_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3011,7 +3011,7 @@ extern "C" void nasm_fdivr_m32_instruction_by_number();
 
 TEST(NASMBytecode, fdivr_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fdivr(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fdivr(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdivr_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3020,7 +3020,7 @@ extern "C" void nasm_fdivr_sti_instruction_by_number();
 
 TEST(NASMBytecode, fdivr_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fdivr(st6).bytecode() };
+	const auto casm_bytecode{ fdivr(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdivr_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3029,7 +3029,7 @@ extern "C" void nasm_fdivr_st_sti_instruction_by_number();
 
 TEST(NASMBytecode, fdivr_st_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fdivr(st0, st6).bytecode() };
+	const auto casm_bytecode{ fdivr(st0, st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdivr_st_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3054,7 +3054,7 @@ extern "C" void nasm_fxch_sti_instruction_by_number();
 
 TEST(NASMBytecode, fxch_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fxch(st6).bytecode() };
+	const auto casm_bytecode{ fxch(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fxch_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3063,7 +3063,7 @@ extern "C" void nasm_fxch_no_operands_instruction();
 
 TEST(NASMBytecode, fxch_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fxch().bytecode() };
+	const auto casm_bytecode{ fxch() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fxch_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3072,7 +3072,7 @@ extern "C" void nasm_fst_m32_instruction_by_number();
 
 TEST(NASMBytecode, fst_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fst(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fst(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fst_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3081,7 +3081,7 @@ extern "C" void nasm_fnop_no_operands_instruction();
 
 TEST(NASMBytecode, fnop_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fnop().bytecode() };
+	const auto casm_bytecode{ fnop() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fnop_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3090,7 +3090,7 @@ extern "C" void nasm_fstp_m32_instruction_by_number();
 
 TEST(NASMBytecode, fstp_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fstp(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fstp(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fstp_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3115,7 +3115,7 @@ extern "C" void nasm_fchs_no_operands_instruction();
 
 TEST(NASMBytecode, fchs_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fchs().bytecode() };
+	const auto casm_bytecode{ fchs() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fchs_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3124,7 +3124,7 @@ extern "C" void nasm_fabs_no_operands_instruction();
 
 TEST(NASMBytecode, fabs_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fabs().bytecode() };
+	const auto casm_bytecode{ fabs() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fabs_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3133,7 +3133,7 @@ extern "C" void nasm_ftst_no_operands_instruction();
 
 TEST(NASMBytecode, ftst_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ ftst().bytecode() };
+	const auto casm_bytecode{ ftst() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_ftst_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3142,7 +3142,7 @@ extern "C" void nasm_fxam_no_operands_instruction();
 
 TEST(NASMBytecode, fxam_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fxam().bytecode() };
+	const auto casm_bytecode{ fxam() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fxam_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3151,7 +3151,7 @@ extern "C" void nasm_fldcw_m16_instruction_by_number();
 
 TEST(NASMBytecode, fldcw_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fldcw(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fldcw(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fldcw_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3160,7 +3160,7 @@ extern "C" void nasm_fld1_no_operands_instruction();
 
 TEST(NASMBytecode, fld1_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fld1().bytecode() };
+	const auto casm_bytecode{ fld1() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fld1_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3169,7 +3169,7 @@ extern "C" void nasm_fldl2t_no_operands_instruction();
 
 TEST(NASMBytecode, fldl2t_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fldl2t().bytecode() };
+	const auto casm_bytecode{ fldl2t() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fldl2t_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3178,7 +3178,7 @@ extern "C" void nasm_fldl2e_no_operands_instruction();
 
 TEST(NASMBytecode, fldl2e_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fldl2e().bytecode() };
+	const auto casm_bytecode{ fldl2e() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fldl2e_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3187,7 +3187,7 @@ extern "C" void nasm_fldpi_no_operands_instruction();
 
 TEST(NASMBytecode, fldpi_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fldpi().bytecode() };
+	const auto casm_bytecode{ fldpi() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fldpi_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3196,7 +3196,7 @@ extern "C" void nasm_fldlg2_no_operands_instruction();
 
 TEST(NASMBytecode, fldlg2_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fldlg2().bytecode() };
+	const auto casm_bytecode{ fldlg2() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fldlg2_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3205,7 +3205,7 @@ extern "C" void nasm_fldln2_no_operands_instruction();
 
 TEST(NASMBytecode, fldln2_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fldln2().bytecode() };
+	const auto casm_bytecode{ fldln2() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fldln2_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3214,7 +3214,7 @@ extern "C" void nasm_fldz_no_operands_instruction();
 
 TEST(NASMBytecode, fldz_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fldz().bytecode() };
+	const auto casm_bytecode{ fldz() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fldz_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3255,7 +3255,7 @@ extern "C" void nasm_f2xm1_no_operands_instruction();
 
 TEST(NASMBytecode, f2xm1_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ f2xm1().bytecode() };
+	const auto casm_bytecode{ f2xm1() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_f2xm1_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3264,7 +3264,7 @@ extern "C" void nasm_fyl2x_no_operands_instruction();
 
 TEST(NASMBytecode, fyl2x_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fyl2x().bytecode() };
+	const auto casm_bytecode{ fyl2x() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fyl2x_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3273,7 +3273,7 @@ extern "C" void nasm_fptan_no_operands_instruction();
 
 TEST(NASMBytecode, fptan_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fptan().bytecode() };
+	const auto casm_bytecode{ fptan() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fptan_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3282,7 +3282,7 @@ extern "C" void nasm_fpatan_no_operands_instruction();
 
 TEST(NASMBytecode, fpatan_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fpatan().bytecode() };
+	const auto casm_bytecode{ fpatan() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fpatan_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3291,7 +3291,7 @@ extern "C" void nasm_fxtract_no_operands_instruction();
 
 TEST(NASMBytecode, fxtract_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fxtract().bytecode() };
+	const auto casm_bytecode{ fxtract() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fxtract_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3300,7 +3300,7 @@ extern "C" void nasm_fprem1_no_operands_instruction();
 
 TEST(NASMBytecode, fprem1_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fprem1().bytecode() };
+	const auto casm_bytecode{ fprem1() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fprem1_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3309,7 +3309,7 @@ extern "C" void nasm_fdecstp_no_operands_instruction();
 
 TEST(NASMBytecode, fdecstp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fdecstp().bytecode() };
+	const auto casm_bytecode{ fdecstp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdecstp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3318,7 +3318,7 @@ extern "C" void nasm_fincstp_no_operands_instruction();
 
 TEST(NASMBytecode, fincstp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fincstp().bytecode() };
+	const auto casm_bytecode{ fincstp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fincstp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3327,7 +3327,7 @@ extern "C" void nasm_fnstcw_m16_instruction_by_number();
 
 TEST(NASMBytecode, fnstcw_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fnstcw(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fnstcw(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fnstcw_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3336,7 +3336,7 @@ extern "C" void nasm_fstcw_m16_instruction_by_number();
 
 TEST(NASMBytecode, fstcw_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fstcw(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fstcw(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fstcw_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3345,7 +3345,7 @@ extern "C" void nasm_fprem_no_operands_instruction();
 
 TEST(NASMBytecode, fprem_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fprem().bytecode() };
+	const auto casm_bytecode{ fprem() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fprem_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3354,7 +3354,7 @@ extern "C" void nasm_fyl2xp1_no_operands_instruction();
 
 TEST(NASMBytecode, fyl2xp1_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fyl2xp1().bytecode() };
+	const auto casm_bytecode{ fyl2xp1() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fyl2xp1_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3363,7 +3363,7 @@ extern "C" void nasm_fsqrt_no_operands_instruction();
 
 TEST(NASMBytecode, fsqrt_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fsqrt().bytecode() };
+	const auto casm_bytecode{ fsqrt() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsqrt_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3372,7 +3372,7 @@ extern "C" void nasm_fsincos_no_operands_instruction();
 
 TEST(NASMBytecode, fsincos_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fsincos().bytecode() };
+	const auto casm_bytecode{ fsincos() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsincos_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3381,7 +3381,7 @@ extern "C" void nasm_frndint_no_operands_instruction();
 
 TEST(NASMBytecode, frndint_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ frndint().bytecode() };
+	const auto casm_bytecode{ frndint() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_frndint_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3390,7 +3390,7 @@ extern "C" void nasm_fscale_no_operands_instruction();
 
 TEST(NASMBytecode, fscale_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fscale().bytecode() };
+	const auto casm_bytecode{ fscale() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fscale_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3399,7 +3399,7 @@ extern "C" void nasm_fsin_no_operands_instruction();
 
 TEST(NASMBytecode, fsin_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fsin().bytecode() };
+	const auto casm_bytecode{ fsin() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsin_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3408,7 +3408,7 @@ extern "C" void nasm_fcos_no_operands_instruction();
 
 TEST(NASMBytecode, fcos_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fcos().bytecode() };
+	const auto casm_bytecode{ fcos() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcos_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3417,7 +3417,7 @@ extern "C" void nasm_fiadd_m32_instruction_by_number();
 
 TEST(NASMBytecode, fiadd_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fiadd(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fiadd(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fiadd_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3426,7 +3426,7 @@ extern "C" void nasm_fcmovb_sti_instruction_by_number();
 
 TEST(NASMBytecode, fcmovb_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fcmovb(st6).bytecode() };
+	const auto casm_bytecode{ fcmovb(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcmovb_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3435,7 +3435,7 @@ extern "C" void nasm_fimul_m32_instruction_by_number();
 
 TEST(NASMBytecode, fimul_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fimul(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fimul(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fimul_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3444,7 +3444,7 @@ extern "C" void nasm_fcmove_sti_instruction_by_number();
 
 TEST(NASMBytecode, fcmove_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fcmove(st6).bytecode() };
+	const auto casm_bytecode{ fcmove(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcmove_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3453,7 +3453,7 @@ extern "C" void nasm_ficom_m32_instruction_by_number();
 
 TEST(NASMBytecode, ficom_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ ficom(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ ficom(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_ficom_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3462,7 +3462,7 @@ extern "C" void nasm_fcmovbe_sti_instruction_by_number();
 
 TEST(NASMBytecode, fcmovbe_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fcmovbe(st6).bytecode() };
+	const auto casm_bytecode{ fcmovbe(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcmovbe_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3471,7 +3471,7 @@ extern "C" void nasm_ficomp_m32_instruction_by_number();
 
 TEST(NASMBytecode, ficomp_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ ficomp(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ ficomp(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_ficomp_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3480,7 +3480,7 @@ extern "C" void nasm_fcmovu_sti_instruction_by_number();
 
 TEST(NASMBytecode, fcmovu_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fcmovu(st6).bytecode() };
+	const auto casm_bytecode{ fcmovu(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcmovu_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3489,7 +3489,7 @@ extern "C" void nasm_fisub_m32_instruction_by_number();
 
 TEST(NASMBytecode, fisub_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fisub(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fisub(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fisub_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3498,7 +3498,7 @@ extern "C" void nasm_fisubr_m32_instruction_by_number();
 
 TEST(NASMBytecode, fisubr_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fisubr(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fisubr(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fisubr_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3507,7 +3507,7 @@ extern "C" void nasm_fucompp_no_operands_instruction();
 
 TEST(NASMBytecode, fucompp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fucompp().bytecode() };
+	const auto casm_bytecode{ fucompp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fucompp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3516,7 +3516,7 @@ extern "C" void nasm_fidiv_m32_instruction_by_number();
 
 TEST(NASMBytecode, fidiv_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fidiv(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fidiv(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fidiv_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3525,7 +3525,7 @@ extern "C" void nasm_fidivr_m32_instruction_by_number();
 
 TEST(NASMBytecode, fidivr_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fidivr(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fidivr(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fidivr_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3534,7 +3534,7 @@ extern "C" void nasm_fild_m32_instruction_by_number();
 
 TEST(NASMBytecode, fild_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fild(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fild(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fild_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3543,7 +3543,7 @@ extern "C" void nasm_fcmovnb_sti_instruction_by_number();
 
 TEST(NASMBytecode, fcmovnb_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fcmovnb(st6).bytecode() };
+	const auto casm_bytecode{ fcmovnb(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcmovnb_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3552,7 +3552,7 @@ extern "C" void nasm_fisttp_m32_instruction_by_number();
 
 TEST(NASMBytecode, fisttp_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fisttp(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fisttp(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fisttp_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3561,7 +3561,7 @@ extern "C" void nasm_fcmovne_sti_instruction_by_number();
 
 TEST(NASMBytecode, fcmovne_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fcmovne(st6).bytecode() };
+	const auto casm_bytecode{ fcmovne(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcmovne_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3570,7 +3570,7 @@ extern "C" void nasm_fist_m32_instruction_by_number();
 
 TEST(NASMBytecode, fist_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fist(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fist(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fist_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3579,7 +3579,7 @@ extern "C" void nasm_fcmovnbe_sti_instruction_by_number();
 
 TEST(NASMBytecode, fcmovnbe_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fcmovnbe(st6).bytecode() };
+	const auto casm_bytecode{ fcmovnbe(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcmovnbe_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3588,7 +3588,7 @@ extern "C" void nasm_fistp_m32_instruction_by_number();
 
 TEST(NASMBytecode, fistp_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fistp(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fistp(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fistp_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3597,7 +3597,7 @@ extern "C" void nasm_fcmovnu_sti_instruction_by_number();
 
 TEST(NASMBytecode, fcmovnu_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fcmovnu(st6).bytecode() };
+	const auto casm_bytecode{ fcmovnu(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcmovnu_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3606,7 +3606,7 @@ extern "C" void nasm_fneni_no_operands_instruction();
 
 TEST(NASMBytecode, fneni_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fneni().bytecode() };
+	const auto casm_bytecode{ fneni() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fneni_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3615,7 +3615,7 @@ extern "C" void nasm_fndisi_no_operands_instruction();
 
 TEST(NASMBytecode, fndisi_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fndisi().bytecode() };
+	const auto casm_bytecode{ fndisi() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fndisi_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3624,7 +3624,7 @@ extern "C" void nasm_fnclex_no_operands_instruction();
 
 TEST(NASMBytecode, fnclex_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fnclex().bytecode() };
+	const auto casm_bytecode{ fnclex() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fnclex_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3633,7 +3633,7 @@ extern "C" void nasm_fclex_no_operands_instruction();
 
 TEST(NASMBytecode, fclex_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fclex().bytecode() };
+	const auto casm_bytecode{ fclex() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fclex_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3642,7 +3642,7 @@ extern "C" void nasm_fninit_no_operands_instruction();
 
 TEST(NASMBytecode, fninit_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fninit().bytecode() };
+	const auto casm_bytecode{ fninit() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fninit_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3651,7 +3651,7 @@ extern "C" void nasm_finit_no_operands_instruction();
 
 TEST(NASMBytecode, finit_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ finit().bytecode() };
+	const auto casm_bytecode{ finit() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_finit_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3660,7 +3660,7 @@ extern "C" void nasm_fld_m80_instruction_by_number();
 
 TEST(NASMBytecode, fld_m80_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fld(tword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fld(tword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fld_m80_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3669,7 +3669,7 @@ extern "C" void nasm_fucomi_sti_instruction_by_number();
 
 TEST(NASMBytecode, fucomi_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fucomi(st6).bytecode() };
+	const auto casm_bytecode{ fucomi(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fucomi_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3678,7 +3678,7 @@ extern "C" void nasm_fcomi_sti_instruction_by_number();
 
 TEST(NASMBytecode, fcomi_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fcomi(st6).bytecode() };
+	const auto casm_bytecode{ fcomi(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcomi_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3687,7 +3687,7 @@ extern "C" void nasm_fstp_m80_instruction_by_number();
 
 TEST(NASMBytecode, fstp_m80_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fstp(tword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fstp(tword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fstp_m80_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3696,7 +3696,7 @@ extern "C" void nasm_fadd_sti_st_instruction_by_number();
 
 TEST(NASMBytecode, fadd_sti_st_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fadd(st6, st0).bytecode() };
+	const auto casm_bytecode{ fadd(st6, st0) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fadd_sti_st_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3705,7 +3705,7 @@ extern "C" void nasm_fmul_sti_st_instruction_by_number();
 
 TEST(NASMBytecode, fmul_sti_st_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fmul(st6, st0).bytecode() };
+	const auto casm_bytecode{ fmul(st6, st0) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fmul_sti_st_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3714,7 +3714,7 @@ extern "C" void nasm_fsubr_sti_st_instruction_by_number();
 
 TEST(NASMBytecode, fsubr_sti_st_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fsubr(st6, st0).bytecode() };
+	const auto casm_bytecode{ fsubr(st6, st0) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsubr_sti_st_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3723,7 +3723,7 @@ extern "C" void nasm_fsub_sti_st_instruction_by_number();
 
 TEST(NASMBytecode, fsub_sti_st_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fsub(st6, st0).bytecode() };
+	const auto casm_bytecode{ fsub(st6, st0) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsub_sti_st_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3732,7 +3732,7 @@ extern "C" void nasm_fdivr_sti_st_instruction_by_number();
 
 TEST(NASMBytecode, fdivr_sti_st_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fdivr(st6, st0).bytecode() };
+	const auto casm_bytecode{ fdivr(st6, st0) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdivr_sti_st_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3741,7 +3741,7 @@ extern "C" void nasm_fdiv_sti_st_instruction_by_number();
 
 TEST(NASMBytecode, fdiv_sti_st_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fdiv(st6, st0).bytecode() };
+	const auto casm_bytecode{ fdiv(st6, st0) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdiv_sti_st_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3750,7 +3750,7 @@ extern "C" void nasm_ffree_sti_instruction_by_number();
 
 TEST(NASMBytecode, ffree_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ ffree(st6).bytecode() };
+	const auto casm_bytecode{ ffree(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_ffree_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3759,7 +3759,7 @@ extern "C" void nasm_fst_sti_instruction_by_number();
 
 TEST(NASMBytecode, fst_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fst(st6).bytecode() };
+	const auto casm_bytecode{ fst(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fst_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3800,7 +3800,7 @@ extern "C" void nasm_fucom_sti_instruction_by_number();
 
 TEST(NASMBytecode, fucom_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fucom(st6).bytecode() };
+	const auto casm_bytecode{ fucom(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fucom_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3809,7 +3809,7 @@ extern "C" void nasm_fucom_no_operands_instruction();
 
 TEST(NASMBytecode, fucom_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fucom().bytecode() };
+	const auto casm_bytecode{ fucom() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fucom_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3818,7 +3818,7 @@ extern "C" void nasm_fucomp_sti_instruction_by_number();
 
 TEST(NASMBytecode, fucomp_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fucomp(st6).bytecode() };
+	const auto casm_bytecode{ fucomp(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fucomp_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3827,7 +3827,7 @@ extern "C" void nasm_fucomp_no_operands_instruction();
 
 TEST(NASMBytecode, fucomp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fucomp().bytecode() };
+	const auto casm_bytecode{ fucomp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fucomp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3868,7 +3868,7 @@ extern "C" void nasm_fnstsw_m16_instruction_by_number();
 
 TEST(NASMBytecode, fnstsw_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fnstsw(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fnstsw(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fnstsw_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3877,7 +3877,7 @@ extern "C" void nasm_fstsw_m16_instruction_by_number();
 
 TEST(NASMBytecode, fstsw_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fstsw(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fstsw(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fstsw_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3886,7 +3886,7 @@ extern "C" void nasm_fiadd_m16_instruction_by_number();
 
 TEST(NASMBytecode, fiadd_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fiadd(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fiadd(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fiadd_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3895,7 +3895,7 @@ extern "C" void nasm_faddp_sti_instruction_by_number();
 
 TEST(NASMBytecode, faddp_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ faddp(st6).bytecode() };
+	const auto casm_bytecode{ faddp(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_faddp_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3904,7 +3904,7 @@ extern "C" void nasm_faddp_no_operands_instruction();
 
 TEST(NASMBytecode, faddp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ faddp().bytecode() };
+	const auto casm_bytecode{ faddp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_faddp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3913,7 +3913,7 @@ extern "C" void nasm_fimul_m16_instruction_by_number();
 
 TEST(NASMBytecode, fimul_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fimul(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fimul(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fimul_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3922,7 +3922,7 @@ extern "C" void nasm_fmulp_sti_instruction_by_number();
 
 TEST(NASMBytecode, fmulp_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fmulp(st6).bytecode() };
+	const auto casm_bytecode{ fmulp(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fmulp_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3931,7 +3931,7 @@ extern "C" void nasm_fmulp_no_operands_instruction();
 
 TEST(NASMBytecode, fmulp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fmulp().bytecode() };
+	const auto casm_bytecode{ fmulp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fmulp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3940,7 +3940,7 @@ extern "C" void nasm_ficom_m16_instruction_by_number();
 
 TEST(NASMBytecode, ficom_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ ficom(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ ficom(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_ficom_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3949,7 +3949,7 @@ extern "C" void nasm_ficomp_m16_instruction_by_number();
 
 TEST(NASMBytecode, ficomp_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ ficomp(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ ficomp(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_ficomp_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3958,7 +3958,7 @@ extern "C" void nasm_fcompp_no_operands_instruction();
 
 TEST(NASMBytecode, fcompp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fcompp().bytecode() };
+	const auto casm_bytecode{ fcompp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcompp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3967,7 +3967,7 @@ extern "C" void nasm_fisub_m16_instruction_by_number();
 
 TEST(NASMBytecode, fisub_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fisub(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fisub(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fisub_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3976,7 +3976,7 @@ extern "C" void nasm_fsubrp_sti_instruction_by_number();
 
 TEST(NASMBytecode, fsubrp_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fsubrp(st6).bytecode() };
+	const auto casm_bytecode{ fsubrp(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsubrp_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -3985,7 +3985,7 @@ extern "C" void nasm_fsubrp_no_operands_instruction();
 
 TEST(NASMBytecode, fsubrp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fsubrp().bytecode() };
+	const auto casm_bytecode{ fsubrp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsubrp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -3994,7 +3994,7 @@ extern "C" void nasm_fisubr_m16_instruction_by_number();
 
 TEST(NASMBytecode, fisubr_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fisubr(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fisubr(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fisubr_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4003,7 +4003,7 @@ extern "C" void nasm_fsubp_sti_instruction_by_number();
 
 TEST(NASMBytecode, fsubp_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fsubp(st6).bytecode() };
+	const auto casm_bytecode{ fsubp(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsubp_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4012,7 +4012,7 @@ extern "C" void nasm_fsubp_no_operands_instruction();
 
 TEST(NASMBytecode, fsubp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fsubp().bytecode() };
+	const auto casm_bytecode{ fsubp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fsubp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4021,7 +4021,7 @@ extern "C" void nasm_fidiv_m16_instruction_by_number();
 
 TEST(NASMBytecode, fidiv_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fidiv(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fidiv(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fidiv_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4030,7 +4030,7 @@ extern "C" void nasm_fdivrp_sti_instruction_by_number();
 
 TEST(NASMBytecode, fdivrp_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fdivrp(st6).bytecode() };
+	const auto casm_bytecode{ fdivrp(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdivrp_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4039,7 +4039,7 @@ extern "C" void nasm_fdivrp_no_operands_instruction();
 
 TEST(NASMBytecode, fdivrp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fdivrp().bytecode() };
+	const auto casm_bytecode{ fdivrp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdivrp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4048,7 +4048,7 @@ extern "C" void nasm_fidivr_m16_instruction_by_number();
 
 TEST(NASMBytecode, fidivr_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fidivr(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fidivr(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fidivr_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4057,7 +4057,7 @@ extern "C" void nasm_fdivp_sti_instruction_by_number();
 
 TEST(NASMBytecode, fdivp_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fdivp(st6).bytecode() };
+	const auto casm_bytecode{ fdivp(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdivp_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4066,7 +4066,7 @@ extern "C" void nasm_fdivp_no_operands_instruction();
 
 TEST(NASMBytecode, fdivp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ fdivp().bytecode() };
+	const auto casm_bytecode{ fdivp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fdivp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4075,7 +4075,7 @@ extern "C" void nasm_fild_m16_instruction_by_number();
 
 TEST(NASMBytecode, fild_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fild(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fild(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fild_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4084,7 +4084,7 @@ extern "C" void nasm_ffreep_sti_instruction_by_number();
 
 TEST(NASMBytecode, ffreep_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ ffreep(st6).bytecode() };
+	const auto casm_bytecode{ ffreep(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_ffreep_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4093,7 +4093,7 @@ extern "C" void nasm_fisttp_m16_instruction_by_number();
 
 TEST(NASMBytecode, fisttp_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fisttp(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fisttp(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fisttp_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4102,7 +4102,7 @@ extern "C" void nasm_fist_m16_instruction_by_number();
 
 TEST(NASMBytecode, fist_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fist(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fist(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fist_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4111,7 +4111,7 @@ extern "C" void nasm_fistp_m16_instruction_by_number();
 
 TEST(NASMBytecode, fistp_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fistp(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ fistp(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fistp_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4120,7 +4120,7 @@ extern "C" void nasm_fbld_m80_instruction_by_number();
 
 TEST(NASMBytecode, fbld_m80_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fbld(tword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fbld(tword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fbld_m80_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4129,7 +4129,7 @@ extern "C" void nasm_fnstsw_ax_instruction();
 
 TEST(NASMBytecode, fnstsw_ax_instruction_test)
 {
-	const auto casm_bytecode{ fnstsw(ax).bytecode() };
+	const auto casm_bytecode{ fnstsw(ax) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fnstsw_ax_instruction), casm_bytecode.size()) == 0);
 };
@@ -4138,7 +4138,7 @@ extern "C" void nasm_fstsw_ax_instruction();
 
 TEST(NASMBytecode, fstsw_ax_instruction_test)
 {
-	const auto casm_bytecode{ fstsw(ax).bytecode() };
+	const auto casm_bytecode{ fstsw(ax) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fstsw_ax_instruction), casm_bytecode.size()) == 0);
 };
@@ -4147,7 +4147,7 @@ extern "C" void nasm_fucomip_sti_instruction_by_number();
 
 TEST(NASMBytecode, fucomip_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fucomip(st6).bytecode() };
+	const auto casm_bytecode{ fucomip(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fucomip_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4156,7 +4156,7 @@ extern "C" void nasm_fbstp_m80_instruction_by_number();
 
 TEST(NASMBytecode, fbstp_m80_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fbstp(tword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ fbstp(tword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fbstp_m80_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4165,7 +4165,7 @@ extern "C" void nasm_fcomip_sti_instruction_by_number();
 
 TEST(NASMBytecode, fcomip_sti_instruction_by_number_test)
 {
-	const auto casm_bytecode{ fcomip(st6).bytecode() };
+	const auto casm_bytecode{ fcomip(st6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_fcomip_sti_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4174,7 +4174,7 @@ extern "C" void nasm_in_al_imm8_instruction();
 
 TEST(NASMBytecode, in_al_imm8_instruction_test)
 {
-	const auto casm_bytecode{ in(al, 0x40).bytecode() };
+	const auto casm_bytecode{ in(al, 0x40) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_in_al_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -4183,7 +4183,7 @@ extern "C" void nasm_in_eax_imm8_instruction();
 
 TEST(NASMBytecode, in_eax_imm8_instruction_test)
 {
-	const auto casm_bytecode{ in(eax, 0x88_b).bytecode() };
+	const auto casm_bytecode{ in(eax, 0x88_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_in_eax_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -4192,7 +4192,7 @@ extern "C" void nasm_out_imm8_al_instruction();
 
 TEST(NASMBytecode, out_imm8_al_instruction_test)
 {
-	const auto casm_bytecode{ out(0x11_b, al).bytecode() };
+	const auto casm_bytecode{ out(0x11_b, al) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_out_imm8_al_instruction), casm_bytecode.size()) == 0);
 };
@@ -4201,7 +4201,7 @@ extern "C" void nasm_out_imm8_eax_instruction();
 
 TEST(NASMBytecode, out_imm8_eax_instruction_test)
 {
-	const auto casm_bytecode{ out(0x11_b, eax).bytecode() };
+	const auto casm_bytecode{ out(0x11_b, eax) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_out_imm8_eax_instruction), casm_bytecode.size()) == 0);
 };
@@ -4210,7 +4210,7 @@ extern "C" void nasm_in_al_dx_instruction();
 
 TEST(NASMBytecode, in_al_dx_instruction_test)
 {
-	const auto casm_bytecode{ in(al, dx).bytecode() };
+	const auto casm_bytecode{ in(al, dx) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_in_al_dx_instruction), casm_bytecode.size()) == 0);
 };
@@ -4219,7 +4219,7 @@ extern "C" void nasm_in_eax_dx_instruction();
 
 TEST(NASMBytecode, in_eax_dx_instruction_test)
 {
-	const auto casm_bytecode{ in(eax, dx).bytecode() };
+	const auto casm_bytecode{ in(eax, dx) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_in_eax_dx_instruction), casm_bytecode.size()) == 0);
 };
@@ -4228,7 +4228,7 @@ extern "C" void nasm_out_dx_al_instruction();
 
 TEST(NASMBytecode, out_dx_al_instruction_test)
 {
-	const auto casm_bytecode{ out(dx, al).bytecode() };
+	const auto casm_bytecode{ out(dx, al) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_out_dx_al_instruction), casm_bytecode.size()) == 0);
 };
@@ -4237,7 +4237,7 @@ extern "C" void nasm_out_dx_eax_instruction();
 
 TEST(NASMBytecode, out_dx_eax_instruction_test)
 {
-	const auto casm_bytecode{ out(dx, eax).bytecode() };
+	const auto casm_bytecode{ out(dx, eax) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_out_dx_eax_instruction), casm_bytecode.size()) == 0);
 };
@@ -4246,7 +4246,7 @@ extern "C" void nasm_lock_no_operands_instruction();
 
 TEST(NASMBytecode, lock_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ lock().bytecode() };
+	const auto casm_bytecode{ lock() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_lock_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4255,7 +4255,7 @@ extern "C" void nasm_int1_no_operands_instruction();
 
 TEST(NASMBytecode, int1_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ int1().bytecode() };
+	const auto casm_bytecode{ int1() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_int1_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4264,7 +4264,7 @@ extern "C" void nasm_icebp_no_operands_instruction();
 
 TEST(NASMBytecode, icebp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ icebp().bytecode() };
+	const auto casm_bytecode{ icebp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_icebp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4273,7 +4273,7 @@ extern "C" void nasm_repnz_no_operands_instruction();
 
 TEST(NASMBytecode, repnz_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ repnz().bytecode() };
+	const auto casm_bytecode{ repnz() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_repnz_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4282,7 +4282,7 @@ extern "C" void nasm_repne_no_operands_instruction();
 
 TEST(NASMBytecode, repne_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ repne().bytecode() };
+	const auto casm_bytecode{ repne() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_repne_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4291,7 +4291,7 @@ extern "C" void nasm_repz_no_operands_instruction();
 
 TEST(NASMBytecode, repz_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ repz().bytecode() };
+	const auto casm_bytecode{ repz() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_repz_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4300,7 +4300,7 @@ extern "C" void nasm_repe_no_operands_instruction();
 
 TEST(NASMBytecode, repe_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ repe().bytecode() };
+	const auto casm_bytecode{ repe() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_repe_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4309,7 +4309,7 @@ extern "C" void nasm_rep_no_operands_instruction();
 
 TEST(NASMBytecode, rep_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ rep().bytecode() };
+	const auto casm_bytecode{ rep() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_rep_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4318,7 +4318,7 @@ extern "C" void nasm_hlt_no_operands_instruction();
 
 TEST(NASMBytecode, hlt_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ hlt().bytecode() };
+	const auto casm_bytecode{ hlt() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_hlt_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4327,7 +4327,7 @@ extern "C" void nasm_cmc_no_operands_instruction();
 
 TEST(NASMBytecode, cmc_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cmc().bytecode() };
+	const auto casm_bytecode{ cmc() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cmc_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4373,7 +4373,7 @@ extern "C" void nasm_clc_no_operands_instruction();
 
 TEST(NASMBytecode, clc_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ clc().bytecode() };
+	const auto casm_bytecode{ clc() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_clc_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4382,7 +4382,7 @@ extern "C" void nasm_stc_no_operands_instruction();
 
 TEST(NASMBytecode, stc_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ stc().bytecode() };
+	const auto casm_bytecode{ stc() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_stc_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4391,7 +4391,7 @@ extern "C" void nasm_cli_no_operands_instruction();
 
 TEST(NASMBytecode, cli_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cli().bytecode() };
+	const auto casm_bytecode{ cli() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cli_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4400,7 +4400,7 @@ extern "C" void nasm_sti_no_operands_instruction();
 
 TEST(NASMBytecode, sti_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ sti().bytecode() };
+	const auto casm_bytecode{ sti() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_sti_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4409,7 +4409,7 @@ extern "C" void nasm_cld_no_operands_instruction();
 
 TEST(NASMBytecode, cld_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cld().bytecode() };
+	const auto casm_bytecode{ cld() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cld_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4418,7 +4418,7 @@ extern "C" void nasm_std_no_operands_instruction();
 
 TEST(NASMBytecode, std_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ std_().bytecode() };
+	const auto casm_bytecode{ std_() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_std_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4475,7 +4475,7 @@ extern "C" void nasm_sldt_m16_instruction_by_number();
 
 TEST(NASMBytecode, sldt_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ sldt(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ sldt(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_sldt_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4500,7 +4500,7 @@ extern "C" void nasm_str_m16_instruction_by_number();
 
 TEST(NASMBytecode, str_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ str(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ str(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_str_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4606,7 +4606,7 @@ extern "C" void nasm_vmcall_no_operands_instruction();
 
 TEST(NASMBytecode, vmcall_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ vmcall().bytecode() };
+	const auto casm_bytecode{ vmcall() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_vmcall_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4615,7 +4615,7 @@ extern "C" void nasm_vmlaunch_no_operands_instruction();
 
 TEST(NASMBytecode, vmlaunch_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ vmlaunch().bytecode() };
+	const auto casm_bytecode{ vmlaunch() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_vmlaunch_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4624,7 +4624,7 @@ extern "C" void nasm_vmresume_no_operands_instruction();
 
 TEST(NASMBytecode, vmresume_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ vmresume().bytecode() };
+	const auto casm_bytecode{ vmresume() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_vmresume_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4633,7 +4633,7 @@ extern "C" void nasm_vmxoff_no_operands_instruction();
 
 TEST(NASMBytecode, vmxoff_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ vmxoff().bytecode() };
+	const auto casm_bytecode{ vmxoff() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_vmxoff_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4658,7 +4658,7 @@ extern "C" void nasm_monitor_no_operands_instruction();
 
 TEST(NASMBytecode, monitor_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ monitor().bytecode() };
+	const auto casm_bytecode{ monitor() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_monitor_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4667,7 +4667,7 @@ extern "C" void nasm_mwait_no_operands_instruction();
 
 TEST(NASMBytecode, mwait_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ mwait().bytecode() };
+	const auto casm_bytecode{ mwait() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_mwait_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4692,7 +4692,7 @@ extern "C" void nasm_xgetbv_no_operands_instruction();
 
 TEST(NASMBytecode, xgetbv_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ xgetbv().bytecode() };
+	const auto casm_bytecode{ xgetbv() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_xgetbv_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4701,7 +4701,7 @@ extern "C" void nasm_xsetbv_no_operands_instruction();
 
 TEST(NASMBytecode, xsetbv_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ xsetbv().bytecode() };
+	const auto casm_bytecode{ xsetbv() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_xsetbv_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4726,7 +4726,7 @@ extern "C" void nasm_smsw_m16_instruction_by_number();
 
 TEST(NASMBytecode, smsw_m16_instruction_by_number_test)
 {
-	const auto casm_bytecode{ smsw(word[r11 + rbx * 8]).bytecode() };
+	const auto casm_bytecode{ smsw(word[r11 + rbx * 8]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_smsw_m16_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -4784,7 +4784,7 @@ extern "C" void nasm_swapgs_no_operands_instruction();
 
 TEST(NASMBytecode, swapgs_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ swapgs().bytecode() };
+	const auto casm_bytecode{ swapgs() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_swapgs_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4793,7 +4793,7 @@ extern "C" void nasm_rdtscp_no_operands_instruction();
 
 TEST(NASMBytecode, rdtscp_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ rdtscp().bytecode() };
+	const auto casm_bytecode{ rdtscp() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_rdtscp_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4870,7 +4870,7 @@ extern "C" void nasm_syscall_no_operands_instruction();
 
 TEST(NASMBytecode, syscall_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ syscall_().bytecode() };
+	const auto casm_bytecode{ syscall_() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_syscall_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4879,7 +4879,7 @@ extern "C" void nasm_clts_no_operands_instruction();
 
 TEST(NASMBytecode, clts_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ clts().bytecode() };
+	const auto casm_bytecode{ clts() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_clts_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4888,7 +4888,7 @@ extern "C" void nasm_sysret_no_operands_instruction();
 
 TEST(NASMBytecode, sysret_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ sysret().bytecode() };
+	const auto casm_bytecode{ sysret() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_sysret_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4897,7 +4897,7 @@ extern "C" void nasm_invd_no_operands_instruction();
 
 TEST(NASMBytecode, invd_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ invd().bytecode() };
+	const auto casm_bytecode{ invd() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_invd_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4906,7 +4906,7 @@ extern "C" void nasm_wbinvd_no_operands_instruction();
 
 TEST(NASMBytecode, wbinvd_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ wbinvd().bytecode() };
+	const auto casm_bytecode{ wbinvd() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_wbinvd_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -4915,7 +4915,7 @@ extern "C" void nasm_ud2_no_operands_instruction();
 
 TEST(NASMBytecode, ud2_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ ud2().bytecode() };
+	const auto casm_bytecode{ ud2() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_ud2_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -5078,7 +5078,7 @@ extern "C" void nasm_movlps_xmm_m64_instruction();
 
 TEST(NASMBytecode, movlps_xmm_m64_instruction_test)
 {
-	const auto casm_bytecode{ movlps(xmm13, qword[r13d]).bytecode() };
+	const auto casm_bytecode{ movlps(xmm13, qword[r13d]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movlps_xmm_m64_instruction), casm_bytecode.size()) == 0);
 };
@@ -5087,7 +5087,7 @@ extern "C" void nasm_movlpd_xmm_m64_instruction();
 
 TEST(NASMBytecode, movlpd_xmm_m64_instruction_test)
 {
-	const auto casm_bytecode{ movlpd(xmm13, qword[r13d]).bytecode() };
+	const auto casm_bytecode{ movlpd(xmm13, qword[r13d]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movlpd_xmm_m64_instruction), casm_bytecode.size()) == 0);
 };
@@ -5128,7 +5128,7 @@ extern "C" void nasm_movlps_m64_xmm_instruction();
 
 TEST(NASMBytecode, movlps_m64_xmm_instruction_test)
 {
-	const auto casm_bytecode{ movlps(qword[r11 + rax], xmm2).bytecode() };
+	const auto casm_bytecode{ movlps(qword[r11 + rax], xmm2) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movlps_m64_xmm_instruction), casm_bytecode.size()) == 0);
 };
@@ -5137,7 +5137,7 @@ extern "C" void nasm_movlpd_m64_xmm_instruction();
 
 TEST(NASMBytecode, movlpd_m64_xmm_instruction_test)
 {
-	const auto casm_bytecode{ movlpd(qword[r11 + rax], xmm2).bytecode() };
+	const auto casm_bytecode{ movlpd(qword[r11 + rax], xmm2) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movlpd_m64_xmm_instruction), casm_bytecode.size()) == 0);
 };
@@ -5226,7 +5226,7 @@ extern "C" void nasm_movhps_xmm_m64_instruction();
 
 TEST(NASMBytecode, movhps_xmm_m64_instruction_test)
 {
-	const auto casm_bytecode{ movhps(xmm13, qword[r13d]).bytecode() };
+	const auto casm_bytecode{ movhps(xmm13, qword[r13d]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movhps_xmm_m64_instruction), casm_bytecode.size()) == 0);
 };
@@ -5235,7 +5235,7 @@ extern "C" void nasm_movhpd_xmm_m64_instruction();
 
 TEST(NASMBytecode, movhpd_xmm_m64_instruction_test)
 {
-	const auto casm_bytecode{ movhpd(xmm13, qword[r13d]).bytecode() };
+	const auto casm_bytecode{ movhpd(xmm13, qword[r13d]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movhpd_xmm_m64_instruction), casm_bytecode.size()) == 0);
 };
@@ -5260,7 +5260,7 @@ extern "C" void nasm_movhps_m64_xmm_instruction();
 
 TEST(NASMBytecode, movhps_m64_xmm_instruction_test)
 {
-	const auto casm_bytecode{ movhps(qword[r11 + rax], xmm2).bytecode() };
+	const auto casm_bytecode{ movhps(qword[r11 + rax], xmm2) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movhps_m64_xmm_instruction), casm_bytecode.size()) == 0);
 };
@@ -5269,7 +5269,7 @@ extern "C" void nasm_movhpd_m64_xmm_instruction();
 
 TEST(NASMBytecode, movhpd_m64_xmm_instruction_test)
 {
-	const auto casm_bytecode{ movhpd(qword[r11 + rax], xmm2).bytecode() };
+	const auto casm_bytecode{ movhpd(qword[r11 + rax], xmm2) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movhpd_m64_xmm_instruction), casm_bytecode.size()) == 0);
 };
@@ -5278,7 +5278,7 @@ extern "C" void nasm_prefetchnta_m8_instruction_by_number();
 
 TEST(NASMBytecode, prefetchnta_m8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ prefetchnta(byte_ptr [r11 + rax]).bytecode() };
+	const auto casm_bytecode{ prefetchnta(byte_ptr [r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_prefetchnta_m8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -5287,7 +5287,7 @@ extern "C" void nasm_prefetcht0_m8_instruction_by_number();
 
 TEST(NASMBytecode, prefetcht0_m8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ prefetcht0(byte_ptr [r11 + rax]).bytecode() };
+	const auto casm_bytecode{ prefetcht0(byte_ptr [r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_prefetcht0_m8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -5296,7 +5296,7 @@ extern "C" void nasm_prefetcht1_m8_instruction_by_number();
 
 TEST(NASMBytecode, prefetcht1_m8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ prefetcht1(byte_ptr [r11 + rax]).bytecode() };
+	const auto casm_bytecode{ prefetcht1(byte_ptr [r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_prefetcht1_m8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -5305,7 +5305,7 @@ extern "C" void nasm_prefetcht2_m8_instruction_by_number();
 
 TEST(NASMBytecode, prefetcht2_m8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ prefetcht2(byte_ptr [r11 + rax]).bytecode() };
+	const auto casm_bytecode{ prefetcht2(byte_ptr [r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_prefetcht2_m8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -5332,7 +5332,7 @@ extern "C" void nasm_mov_r64_crn_instruction();
 
 TEST(NASMBytecode, mov_r64_crn_instruction_test)
 {
-	const auto casm_bytecode{ mov(rdx, cr0).bytecode() };
+	const auto casm_bytecode{ mov(rdx, cr0) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_mov_r64_crn_instruction), casm_bytecode.size()) == 0);
 };
@@ -5341,7 +5341,7 @@ extern "C" void nasm_mov_r64_drn_instruction();
 
 TEST(NASMBytecode, mov_r64_drn_instruction_test)
 {
-	const auto casm_bytecode{ mov(rax, dr0).bytecode() };
+	const auto casm_bytecode{ mov(rax, dr0) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_mov_r64_drn_instruction), casm_bytecode.size()) == 0);
 };
@@ -5350,7 +5350,7 @@ extern "C" void nasm_mov_crn_r64_instruction();
 
 TEST(NASMBytecode, mov_crn_r64_instruction_test)
 {
-	const auto casm_bytecode{ mov(cr0, rcx).bytecode() };
+	const auto casm_bytecode{ mov(cr0, rcx) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_mov_crn_r64_instruction), casm_bytecode.size()) == 0);
 };
@@ -5359,7 +5359,7 @@ extern "C" void nasm_mov_drn_r64_instruction();
 
 TEST(NASMBytecode, mov_drn_r64_instruction_test)
 {
-	const auto casm_bytecode{ mov(dr0, rcx).bytecode() };
+	const auto casm_bytecode{ mov(dr0, rcx) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_mov_drn_r64_instruction), casm_bytecode.size()) == 0);
 };
@@ -5738,7 +5738,7 @@ extern "C" void nasm_wrmsr_no_operands_instruction();
 
 TEST(NASMBytecode, wrmsr_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ wrmsr().bytecode() };
+	const auto casm_bytecode{ wrmsr() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_wrmsr_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -5747,7 +5747,7 @@ extern "C" void nasm_rdtsc_no_operands_instruction();
 
 TEST(NASMBytecode, rdtsc_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ rdtsc().bytecode() };
+	const auto casm_bytecode{ rdtsc() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_rdtsc_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -5756,7 +5756,7 @@ extern "C" void nasm_rdmsr_no_operands_instruction();
 
 TEST(NASMBytecode, rdmsr_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ rdmsr().bytecode() };
+	const auto casm_bytecode{ rdmsr() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_rdmsr_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -5765,7 +5765,7 @@ extern "C" void nasm_rdpmc_no_operands_instruction();
 
 TEST(NASMBytecode, rdpmc_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ rdpmc().bytecode() };
+	const auto casm_bytecode{ rdpmc() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_rdpmc_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -5774,7 +5774,7 @@ extern "C" void nasm_sysenter_no_operands_instruction();
 
 TEST(NASMBytecode, sysenter_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ sysenter().bytecode() };
+	const auto casm_bytecode{ sysenter() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_sysenter_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -5783,7 +5783,7 @@ extern "C" void nasm_sysexit_no_operands_instruction();
 
 TEST(NASMBytecode, sysexit_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ sysexit().bytecode() };
+	const auto casm_bytecode{ sysexit() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_sysexit_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -5792,7 +5792,7 @@ extern "C" void nasm_getsec_no_operands_instruction();
 
 TEST(NASMBytecode, getsec_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ getsec().bytecode() };
+	const auto casm_bytecode{ getsec() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_getsec_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -5801,7 +5801,7 @@ extern "C" void nasm_invept_r64_m128_instruction();
 
 TEST(NASMBytecode, invept_r64_m128_instruction_test)
 {
-	const auto casm_bytecode{ invept(rax, oword [0x11223344_d]).bytecode() };
+	const auto casm_bytecode{ invept(rax, oword [0x11223344_d]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_invept_r64_m128_instruction), casm_bytecode.size()) == 0);
 };
@@ -5810,7 +5810,7 @@ extern "C" void nasm_invvpid_r64_m128_instruction();
 
 TEST(NASMBytecode, invvpid_r64_m128_instruction_test)
 {
-	const auto casm_bytecode{ invvpid(rax, oword [0x11223344_d]).bytecode() };
+	const auto casm_bytecode{ invvpid(rax, oword [0x11223344_d]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_invvpid_r64_m128_instruction), casm_bytecode.size()) == 0);
 };
@@ -6016,7 +6016,7 @@ extern "C" void nasm_pextrb_m8_xmm_imm8_instruction();
 
 TEST(NASMBytecode, pextrb_m8_xmm_imm8_instruction_test)
 {
-	const auto casm_bytecode{ pextrb(byte_ptr [r11 + rax], xmm6, 0x11_b).bytecode() };
+	const auto casm_bytecode{ pextrb(byte_ptr [r11 + rax], xmm6, 0x11_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pextrb_m8_xmm_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -6089,7 +6089,7 @@ extern "C" void nasm_pinsrb_xmm_m8_imm8_instruction();
 
 TEST(NASMBytecode, pinsrb_xmm_m8_imm8_instruction_test)
 {
-	const auto casm_bytecode{ pinsrb(xmm12, byte_ptr [rsp + 0x45_b], 0x17_b).bytecode() };
+	const auto casm_bytecode{ pinsrb(xmm12, byte_ptr [rsp + 0x45_b], 0x17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pinsrb_xmm_m8_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -6114,7 +6114,7 @@ extern "C" void nasm_insertps_xmm_m32_imm8_instruction();
 
 TEST(NASMBytecode, insertps_xmm_m32_imm8_instruction_test)
 {
-	const auto casm_bytecode{ insertps(xmm8, dword[r13d * 4], 0x17_b).bytecode() };
+	const auto casm_bytecode{ insertps(xmm8, dword[r13d * 4], 0x17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_insertps_xmm_m32_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -7785,7 +7785,7 @@ extern "C" void nasm_movq_mm_r64_instruction();
 
 TEST(NASMBytecode, movq_mm_r64_instruction_test)
 {
-	const auto casm_bytecode{ movq(mm2, rdx).bytecode() };
+	const auto casm_bytecode{ movq(mm2, rdx) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movq_mm_r64_instruction), casm_bytecode.size()) == 0);
 };
@@ -7810,7 +7810,7 @@ extern "C" void nasm_movq_mm_mm_instruction();
 
 TEST(NASMBytecode, movq_mm_mm_instruction_test)
 {
-	const auto casm_bytecode{ movq(mm2, mm3).bytecode() };
+	const auto casm_bytecode{ movq(mm2, mm3) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movq_mm_mm_instruction), casm_bytecode.size()) == 0);
 };
@@ -7819,7 +7819,7 @@ extern "C" void nasm_movq_mm_m64_instruction();
 
 TEST(NASMBytecode, movq_mm_m64_instruction_test)
 {
-	const auto casm_bytecode{ movq(mm2, qword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ movq(mm2, qword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movq_mm_m64_instruction), casm_bytecode.size()) == 0);
 };
@@ -7908,7 +7908,7 @@ extern "C" void nasm_psrlw_mm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psrlw_mm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psrlw(mm2, 0x11).bytecode() };
+	const auto casm_bytecode{ psrlw(mm2, 0x11) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psrlw_mm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -7917,7 +7917,7 @@ extern "C" void nasm_psrlw_xmm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psrlw_xmm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psrlw(xmm2, 17_b).bytecode() };
+	const auto casm_bytecode{ psrlw(xmm2, 17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psrlw_xmm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -7926,7 +7926,7 @@ extern "C" void nasm_psraw_mm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psraw_mm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psraw(mm2, 0x11).bytecode() };
+	const auto casm_bytecode{ psraw(mm2, 0x11) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psraw_mm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -7935,7 +7935,7 @@ extern "C" void nasm_psraw_xmm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psraw_xmm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psraw(xmm2, 17_b).bytecode() };
+	const auto casm_bytecode{ psraw(xmm2, 17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psraw_xmm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -7944,7 +7944,7 @@ extern "C" void nasm_psllw_mm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psllw_mm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psllw(mm2, 0x11).bytecode() };
+	const auto casm_bytecode{ psllw(mm2, 0x11) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psllw_mm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -7953,7 +7953,7 @@ extern "C" void nasm_psllw_xmm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psllw_xmm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psllw(xmm2, 17_b).bytecode() };
+	const auto casm_bytecode{ psllw(xmm2, 17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psllw_xmm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -7962,7 +7962,7 @@ extern "C" void nasm_psrld_mm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psrld_mm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psrld(mm2, 0x11).bytecode() };
+	const auto casm_bytecode{ psrld(mm2, 0x11) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psrld_mm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -7971,7 +7971,7 @@ extern "C" void nasm_psrld_xmm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psrld_xmm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psrld(xmm2, 17_b).bytecode() };
+	const auto casm_bytecode{ psrld(xmm2, 17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psrld_xmm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -7980,7 +7980,7 @@ extern "C" void nasm_psrad_mm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psrad_mm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psrad(mm2, 0x11).bytecode() };
+	const auto casm_bytecode{ psrad(mm2, 0x11) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psrad_mm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -7989,7 +7989,7 @@ extern "C" void nasm_psrad_xmm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psrad_xmm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psrad(xmm2, 17_b).bytecode() };
+	const auto casm_bytecode{ psrad(xmm2, 17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psrad_xmm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -7998,7 +7998,7 @@ extern "C" void nasm_pslld_mm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, pslld_mm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ pslld(mm2, 0x11).bytecode() };
+	const auto casm_bytecode{ pslld(mm2, 0x11) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pslld_mm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -8007,7 +8007,7 @@ extern "C" void nasm_pslld_xmm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, pslld_xmm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ pslld(xmm2, 17_b).bytecode() };
+	const auto casm_bytecode{ pslld(xmm2, 17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pslld_xmm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -8016,7 +8016,7 @@ extern "C" void nasm_psrlq_mm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psrlq_mm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psrlq(mm2, 0x11).bytecode() };
+	const auto casm_bytecode{ psrlq(mm2, 0x11) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psrlq_mm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -8025,7 +8025,7 @@ extern "C" void nasm_psrlq_xmm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psrlq_xmm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psrlq(xmm2, 17_b).bytecode() };
+	const auto casm_bytecode{ psrlq(xmm2, 17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psrlq_xmm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -8034,7 +8034,7 @@ extern "C" void nasm_psrldq_xmm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psrldq_xmm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psrldq(xmm2, 17_b).bytecode() };
+	const auto casm_bytecode{ psrldq(xmm2, 17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psrldq_xmm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -8043,7 +8043,7 @@ extern "C" void nasm_psllq_mm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psllq_mm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psllq(mm2, 0x11).bytecode() };
+	const auto casm_bytecode{ psllq(mm2, 0x11) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psllq_mm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -8052,7 +8052,7 @@ extern "C" void nasm_psllq_xmm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, psllq_xmm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ psllq(xmm2, 17_b).bytecode() };
+	const auto casm_bytecode{ psllq(xmm2, 17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_psllq_xmm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -8061,7 +8061,7 @@ extern "C" void nasm_pslldq_xmm_imm8_instruction_by_number();
 
 TEST(NASMBytecode, pslldq_xmm_imm8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ pslldq(xmm2, 17_b).bytecode() };
+	const auto casm_bytecode{ pslldq(xmm2, 17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pslldq_xmm_imm8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -8118,7 +8118,7 @@ extern "C" void nasm_emms_no_operands_instruction();
 
 TEST(NASMBytecode, emms_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ emms().bytecode() };
+	const auto casm_bytecode{ emms() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_emms_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -8345,7 +8345,7 @@ extern "C" void nasm_push_fs_instruction();
 
 TEST(NASMBytecode, push_fs_instruction_test)
 {
-	const auto casm_bytecode{ push(fs).bytecode() };
+	const auto casm_bytecode{ push(fs) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_push_fs_instruction), casm_bytecode.size()) == 0);
 };
@@ -8354,7 +8354,7 @@ extern "C" void nasm_pop_fs_instruction();
 
 TEST(NASMBytecode, pop_fs_instruction_test)
 {
-	const auto casm_bytecode{ pop(fs).bytecode() };
+	const auto casm_bytecode{ pop(fs) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pop_fs_instruction), casm_bytecode.size()) == 0);
 };
@@ -8363,7 +8363,7 @@ extern "C" void nasm_cpuid_no_operands_instruction();
 
 TEST(NASMBytecode, cpuid_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ cpuid().bytecode() };
+	const auto casm_bytecode{ cpuid() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_cpuid_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -8432,7 +8432,7 @@ extern "C" void nasm_push_gs_instruction();
 
 TEST(NASMBytecode, push_gs_instruction_test)
 {
-	const auto casm_bytecode{ push(gs).bytecode() };
+	const auto casm_bytecode{ push(gs) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_push_gs_instruction), casm_bytecode.size()) == 0);
 };
@@ -8441,7 +8441,7 @@ extern "C" void nasm_pop_gs_instruction();
 
 TEST(NASMBytecode, pop_gs_instruction_test)
 {
-	const auto casm_bytecode{ pop(gs).bytecode() };
+	const auto casm_bytecode{ pop(gs) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pop_gs_instruction), casm_bytecode.size()) == 0);
 };
@@ -8450,7 +8450,7 @@ extern "C" void nasm_rsm_no_operands_instruction();
 
 TEST(NASMBytecode, rsm_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ rsm().bytecode() };
+	const auto casm_bytecode{ rsm() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_rsm_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -8551,7 +8551,7 @@ extern "C" void nasm_ldmxcsr_m32_instruction_by_number();
 
 TEST(NASMBytecode, ldmxcsr_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ ldmxcsr(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ ldmxcsr(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_ldmxcsr_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -8560,7 +8560,7 @@ extern "C" void nasm_stmxcsr_m32_instruction_by_number();
 
 TEST(NASMBytecode, stmxcsr_m32_instruction_by_number_test)
 {
-	const auto casm_bytecode{ stmxcsr(dword[r11 + rax]).bytecode() };
+	const auto casm_bytecode{ stmxcsr(dword[r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_stmxcsr_m32_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -8585,7 +8585,7 @@ extern "C" void nasm_lfence_no_operands_instruction();
 
 TEST(NASMBytecode, lfence_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ lfence().bytecode() };
+	const auto casm_bytecode{ lfence() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_lfence_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -8610,7 +8610,7 @@ extern "C" void nasm_mfence_no_operands_instruction();
 
 TEST(NASMBytecode, mfence_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ mfence().bytecode() };
+	const auto casm_bytecode{ mfence() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_mfence_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -8619,7 +8619,7 @@ extern "C" void nasm_sfence_no_operands_instruction();
 
 TEST(NASMBytecode, sfence_no_operands_instruction_test)
 {
-	const auto casm_bytecode{ sfence().bytecode() };
+	const auto casm_bytecode{ sfence() };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_sfence_no_operands_instruction), casm_bytecode.size()) == 0);
 };
@@ -8628,7 +8628,7 @@ extern "C" void nasm_clflush_m8_instruction_by_number();
 
 TEST(NASMBytecode, clflush_m8_instruction_by_number_test)
 {
-	const auto casm_bytecode{ clflush(byte_ptr [r11 + rax]).bytecode() };
+	const auto casm_bytecode{ clflush(byte_ptr [r11 + rax]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_clflush_m8_instruction_by_number), casm_bytecode.size()) == 0);
 };
@@ -9126,7 +9126,7 @@ extern "C" void nasm_pinsrw_mm_r32_imm8_instruction();
 
 TEST(NASMBytecode, pinsrw_mm_r32_imm8_instruction_test)
 {
-	const auto casm_bytecode{ pinsrw(mm2, edx, 0x11).bytecode() };
+	const auto casm_bytecode{ pinsrw(mm2, edx, 0x11) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pinsrw_mm_r32_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -9135,7 +9135,7 @@ extern "C" void nasm_pinsrw_mm_m16_imm8_instruction();
 
 TEST(NASMBytecode, pinsrw_mm_m16_imm8_instruction_test)
 {
-	const auto casm_bytecode{ pinsrw(mm2, word[r11 + rax], 0x11_b).bytecode() };
+	const auto casm_bytecode{ pinsrw(mm2, word[r11 + rax], 0x11_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pinsrw_mm_m16_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -9160,7 +9160,7 @@ extern "C" void nasm_pinsrw_xmm_m16_imm8_instruction();
 
 TEST(NASMBytecode, pinsrw_xmm_m16_imm8_instruction_test)
 {
-	const auto casm_bytecode{ pinsrw(xmm2, word[0x11223344_d], 0x17_b).bytecode() };
+	const auto casm_bytecode{ pinsrw(xmm2, word[0x11223344_d], 0x17_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pinsrw_xmm_m16_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -9169,7 +9169,7 @@ extern "C" void nasm_pextrw_r32_mm_imm8_instruction();
 
 TEST(NASMBytecode, pextrw_r32_mm_imm8_instruction_test)
 {
-	const auto casm_bytecode{ pextrw(edx, mm6, 0x11_b).bytecode() };
+	const auto casm_bytecode{ pextrw(edx, mm6, 0x11_b) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pextrw_r32_mm_imm8_instruction), casm_bytecode.size()) == 0);
 };
@@ -9377,7 +9377,7 @@ extern "C" void nasm_movq_m64_xmm_instruction();
 
 TEST(NASMBytecode, movq_m64_xmm_instruction_test)
 {
-	const auto casm_bytecode{ movq(qword[r11 + rax], xmm2).bytecode() };
+	const auto casm_bytecode{ movq(qword[r11 + rax], xmm2) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movq_m64_xmm_instruction), casm_bytecode.size()) == 0);
 };
@@ -9386,7 +9386,7 @@ extern "C" void nasm_movdq2q_mm_xmm_instruction();
 
 TEST(NASMBytecode, movdq2q_mm_xmm_instruction_test)
 {
-	const auto casm_bytecode{ movdq2q(mm2, xmm3).bytecode() };
+	const auto casm_bytecode{ movdq2q(mm2, xmm3) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movdq2q_mm_xmm_instruction), casm_bytecode.size()) == 0);
 };
@@ -9395,7 +9395,7 @@ extern "C" void nasm_pmovmskb_r32_mm_instruction();
 
 TEST(NASMBytecode, pmovmskb_r32_mm_instruction_test)
 {
-	const auto casm_bytecode{ pmovmskb(edx, mm6).bytecode() };
+	const auto casm_bytecode{ pmovmskb(edx, mm6) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pmovmskb_r32_mm_instruction), casm_bytecode.size()) == 0);
 };
@@ -9404,7 +9404,7 @@ extern "C" void nasm_pmovmskb_r32_xmm_instruction();
 
 TEST(NASMBytecode, pmovmskb_r32_xmm_instruction_test)
 {
-	const auto casm_bytecode{ pmovmskb(edx, xmm2).bytecode() };
+	const auto casm_bytecode{ pmovmskb(edx, xmm2) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_pmovmskb_r32_xmm_instruction), casm_bytecode.size()) == 0);
 };
@@ -9685,7 +9685,7 @@ extern "C" void nasm_movntq_m64_mm_instruction();
 
 TEST(NASMBytecode, movntq_m64_mm_instruction_test)
 {
-	const auto casm_bytecode{ movntq(qword[r11 + rax], mm2).bytecode() };
+	const auto casm_bytecode{ movntq(qword[r11 + rax], mm2) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_movntq_m64_mm_instruction), casm_bytecode.size()) == 0);
 };
@@ -9838,7 +9838,7 @@ extern "C" void nasm_lddqu_xmm_m128_instruction();
 
 TEST(NASMBytecode, lddqu_xmm_m128_instruction_test)
 {
-	const auto casm_bytecode{ lddqu(xmm2, oword [rbp + r13 + 0x17_b]).bytecode() };
+	const auto casm_bytecode{ lddqu(xmm2, oword [rbp + r13 + 0x17_b]) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_lddqu_xmm_m128_instruction), casm_bytecode.size()) == 0);
 };
@@ -9943,7 +9943,7 @@ extern "C" void nasm_maskmovq_mm_mm_instruction();
 
 TEST(NASMBytecode, maskmovq_mm_mm_instruction_test)
 {
-	const auto casm_bytecode{ maskmovq(mm2, mm3).bytecode() };
+	const auto casm_bytecode{ maskmovq(mm2, mm3) };
 
 	ASSERT_TRUE(std::memcmp(casm_bytecode.data(), reinterpret_cast<std::byte const* const>(nasm_maskmovq_mm_mm_instruction), casm_bytecode.size()) == 0);
 };
@@ -10112,7 +10112,7 @@ TEST(FunctionlTest, x64_f)
 
 TEST(SingleInstruction, inc_instruction)
 {
-	constexpr auto result{ inc(byte_ptr [rdx + rax * 8]).bytecode() };
+	constexpr auto result{ inc(byte_ptr [rdx + rax * 8]) };
 
 	constexpr auto expected{ details::make_static_bytecode(0xfe, 0x04, 0xc2) };
 
