@@ -79,7 +79,7 @@ int main()
 
 ### Single instructions
 
-https://github.com/amliwada/casm/blob/06fd7b7d5d533f7529a7de5b3104395559f48a94/tests/main.cpp#L10115-L10119
+https://github.com/amliwada/casm/blob/dedad95cc4409cf560aec903fa297e4bda3c75e4/tests/main.cpp#L10115-L10119
 
 ### More Examples
 
