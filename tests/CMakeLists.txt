@@ -7,3 +7,5 @@ include(FetchContent)
 FetchContent_Declare(googletest GIT_REPOSITORY https://github.com/google/googletest.git GIT_TAG release-1.11.0)
 FetchContent_MakeAvailable(googletest)
 target_link_libraries(casm_testing PRIVATE gtest_main)
+
+add_test(NAME casm_test COMMAND "${CMAKE_BINARY_DIR}/bin/casm_testing")

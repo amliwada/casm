@@ -6,4 +6,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
-add_subdirectory(tests)
+set(CASM_BUILD_TESTS ON CACHE BOOL "Build the tests (Requires https://github.com/google/googletest)" FORCE)
+
+if (CASM_BUILD_TESTS)
+    include(CTest)
+
+    add_subdirectory(tests)
+endif()
