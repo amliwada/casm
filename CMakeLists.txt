@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.12)
 
 project(casm VERSION 1.0 LANGUAGES CXX)
 
+set(CASM_BUILD_TESTS OFF CACHE BOOL "Build the tests (Requires https://github.com/google/googletest)" FORCE)
+
 include(GNUInstallDirs)
 
 add_library(${PROJECT_NAME} INTERFACE)
@@ -35,8 +37,6 @@ install(FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake)
 
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/source DESTINATION source)
-
-set(CASM_BUILD_TESTS ON CACHE BOOL "Build the tests (Requires https://github.com/google/googletest)" FORCE)
 
 if (CASM_BUILD_TESTS)
     include(CTest)

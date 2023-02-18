@@ -11,6 +11,7 @@
 #include <vector>
 #include <limits>
 #include <optional>
+#include <iterator>
 #include <cassert>
 #include <tuple>
 #include <stdexcept>

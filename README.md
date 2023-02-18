@@ -29,7 +29,7 @@ target_link_libraries(casm_example casm)
 ### Assembler
 
 ```C++
-#include "casm.hpp"
+#include <casm.hpp>
 
 int main()
 {
@@ -54,7 +54,7 @@ int main()
 ### Inline assembler
 
 ```C++
-#include "casm.hpp"
+#include <casm.hpp>
 
 #include <cassert>
 
