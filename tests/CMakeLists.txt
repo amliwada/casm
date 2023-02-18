@@ -9,4 +9,4 @@ FetchContent_Declare(googletest GIT_REPOSITORY https://github.com/google/googlet
 FetchContent_MakeAvailable(googletest)
 target_link_libraries(casm_testing PRIVATE gtest_main)
 
-add_test(NAME casm_test COMMAND "${CMAKE_BINARY_DIR}/bin/casm_testing")
+add_test(NAME casm_test COMMAND "${CMAKE_INSTALL_BINDIR}/casm_testing")
