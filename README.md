@@ -18,7 +18,7 @@ add_executable(casm_example main.cpp)
 set_target_properties(casm_example PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON CXX_EXTENSIONS OFF)
 
 include(FetchContent)
-FetchContent_Declare(casm GIT_REPOSITORY https://github.com/amliwada/casm.git GIT_TAG v1.0.4)
+FetchContent_Declare(casm GIT_REPOSITORY https://github.com/amliwada/casm.git GIT_TAG v1.0.6)
 FetchContent_MakeAvailable(casm)
 
 target_link_libraries(casm_example casm)
